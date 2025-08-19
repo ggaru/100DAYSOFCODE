@@ -2,21 +2,22 @@ from menu import Menu
 from coffee_maker import CoffeeMaker
 from money_machine import MoneyMachine
 
+#starting objects
 menu = Menu()
 make = CoffeeMaker()
 money = MoneyMachine()
+
+
 while True:
     print("\n")
-    print(menu.get_items())
-    item = input("Choose a coffe:")
-    if item == 'report':
-        make.report()
+    print(menu.get_items()) #print all the items of the menu
+    item = input("Choose a coffe:") 
+    if item == 'report': #condition to print all the reports 
+        make.report() 
         money.report()
     else: 
-        order = menu.find_drink(item)
-        if make.is_resource_sufficient(order) == True:
-            if money.make_payment(order.cost) == True:
-            #Return if is possible to do the drink, passed by menu.find_drink
+        order = menu.find_drink(item) #find the drink choosed in the menu
+        if make.is_resource_sufficient(order) == True and money.make_payment(order.cost) == True: #if are resourcers, keep makeing
                 make.make_coffee(order)
-            else:break    
-        else: break
+        else:break    
+        
