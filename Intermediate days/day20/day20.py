@@ -9,23 +9,23 @@ screen.setup(600,600)
 screen.bgcolor("black")
 screen.title("snake")
 
+turtle = Turtle()
+snake = Snake()
 
 playing = True
 
+snake.createTurtle()
 
-createTurtle()
-print(blocks)
+screen.listen()
+
+screen.onkey(snake.up,"Up")
+screen.onkey(snake.down,"Down")
+screen.onkey(snake.left,"Left")
+screen.onkey(snake.right,"Right")
 
 while playing:
     screen.update()
     time.sleep(0.1)
-
-    for i in range(len(blocks)-1,0,-1):
-        x = blocks[i -1].xcor()
-        y = blocks[i -1].ycor()
-        blocks[i].goto(x,y)
-    blocks[0].forward(20)
-   
-            
-
+    snake.move()
+    print(snake.blocks[0].heading())
 screen.exitonclick()
