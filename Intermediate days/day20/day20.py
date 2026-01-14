@@ -12,7 +12,10 @@ screen.title("snake")
 
 turtle = Turtle()
 snake = Snake()
+<<<<<<< HEAD
 food = Food()
+=======
+>>>>>>> 53e86e296198d438f58b301d74f190f9b700951f
 
 playing = True
 
