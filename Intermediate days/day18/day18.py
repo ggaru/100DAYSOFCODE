@@ -1,5 +1,6 @@
 from turtle import *
 import colorgram
+import random
 
 ### making a hirst painting
 # 10 dot's per line and collumn. Each dot has a size of 20px. And a pace of 50px from each other. 
@@ -16,8 +17,31 @@ c = []
 for i in range(6):
     c.append((colors[i].rgb.r, colors[i].rgb.g, colors[i].rgb.b))
 """
-turtle.teleport(-400,-300)
-turtle.speed(20)
-turtle.circle(20)
+turtle.screen.colormode(255)
+turtle.speed(10)
+turtle.penup()
+turtle.teleport(-200,-200)
+dots = 4
 
+def teleportTurtle():
+    x = -200
+    y = -200
+    for i in range(dots):
+        turtle.teleport(x, y)
+        paintDots(dots)
+        y = y+50
+        
+def color():
+    c = random.choice(colors)
+    return turtle.color(c)
+
+def paintDots(dots):
+    for i in range(dots):
+        color()
+        turtle.dot(20)
+        turtle.forward(50)
+        
+      
+
+teleportTurtle()
 turtle.screen.mainloop();

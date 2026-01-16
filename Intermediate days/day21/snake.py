@@ -9,15 +9,24 @@ class Snake():
        pass    
 
     def createTurtle(self):
-        x = 0
+       
         for i in range(3):
+          self.add_segment(i)
+
+    def add_segment(self,position):
+            
             i = Turtle()
             i.penup()
             i.color("white")
             i.shape("square")
+            x = 0
             i.goto(x,0)
             x = x - 20
             self.blocks.append(i)
+
+    def extend(self):
+        self.add_segment(self.blocks[-1].position())
+
 
     def move(self):
         for i in range(len(self.blocks)-1,0,-1):
