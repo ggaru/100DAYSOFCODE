@@ -25,6 +25,7 @@ screen.onkey(r_paddle.up, "w")
 screen.onkey(r_paddle.down, "s")
 screen.onkey(l_paddle.up, "Up")
 screen.onkey(l_paddle.down, "Down")
+
 #loop
 while playing:
     time.sleep(0.05)
