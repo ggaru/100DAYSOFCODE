@@ -47,8 +47,8 @@ while playing:
         answer_state = answer_state.title()
         if answer_state == "Exit":
             file = open("Intermediate days/day25/states to learn.csv", "w")
-            for i in states_to_learn: 
-                file.write(f"{i}\n")
+            states = [i for i in states_to_learn]
+            file.write(f"{states}\n")
             file.close()
             playing = False
             break
