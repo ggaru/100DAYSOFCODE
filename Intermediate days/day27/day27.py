@@ -8,7 +8,7 @@ window.minsize(width,height)
 window.config(padx=50, pady=50)
 
 def convert():
-    km = int(input.get())
+    km = float(input.get())
     km = km*1.6
     km_label["text"] = km
     
